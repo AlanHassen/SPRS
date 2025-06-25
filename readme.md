@@ -36,7 +36,7 @@ We recommend setting up a dedicated conda environment based on the AiZynthFinder
 
 ## Data
 
-All necessary data is available on Figshare [LINK]:
+All necessary data is available on Figshare [[LINK](https://figshare.com/s/44f7c0d150d0dbfd15fe)]:
 
 - Evaluation datasets:
   - ChEMBL1000 and ChEMBL100 (subsample)
