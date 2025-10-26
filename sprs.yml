@@ -1,0 +1,16 @@
+name: sprs
+channels:
+  - pytorch
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python>=3.7,<3.11
+  - poetry>=1.1.4,<1.4.1
+  - hdf5
+  - pytables=3.9.2
+  - pytorch
+  - torchvision
+  - torchaudio
+  - pillow=9.0.0
+  - typed-ast=1.4.3
+  - pylint=2.16.0
