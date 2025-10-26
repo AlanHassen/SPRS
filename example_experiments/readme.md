@@ -16,7 +16,7 @@ Before running an experiment, you must adapt the paths in the configuration YAML
 
 ### 3. Running the Search
 
-Export the plugin folder for AiZynthfinder:
+Export the plugin folder for AiZynthfinder (change path):
 
 ```bash
 export PYTHONPATH=/Users/alankaihassen/development/diversity_search_rebuttal/updated_code/SPRS/aizynthfinder/plugins/
