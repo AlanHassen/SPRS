@@ -14,23 +14,46 @@ The installation process involves setting up multiple systems to replicate our r
 
 We recommend setting up a dedicated conda environment based on the AiZynthFinder development environment, where Models Matter will be installed.
 
-### 1. AiZynthFinder Setup
+# SPRS Conda Environment Installation
+
+## 0. Install SPRS Conda Environment
+
+We have simplified the installation process. Please run the following command in your terminal:
+'''./install.sh'''
+
+**Note:** The dependencies are optimized for an M1 Mac. It might be necessary to adjust some packages depending on your environment. However, for simply reproducing the plots with Jupyter notebooks, this setup should be sufficient. For more details, we refer interested readers to the respective repositories.
+### What `install.sh` Does:
+The installation script automates the following steps:
+1. **Install and activate the `sprs` conda environment.**
+2. **Clone the required "Models Matter" repository** into the `external/` directory.
+3. **Install the `modelsmatter_modelzoo`.**
+   * **Important:** If this step fails, you may need to remove the `deepspeed` and `fairscale` dependencies from `external/modelsmatter/external/modelsmatter_modelzoo/pyproject.toml`, as they are not required for this purpose. After removing them, please rerun the script.
+
+4. **Install the provided AiZynthFinder** that includes the new algorithms.
+5. **Install Syntheseus Retro* benchmark** for the single-step model.
+6. **Install some Mac-specific packages.**
+
+## 1. AiZynthFinder & Models Matter
+
+**Important:** These steps are only necessary if you want to run AiZynthFinder. We strongly suggest you do this on an HPC with Slurm and not locally.
 
 - Either use the provided code or copy the search algorithms from `aizynthfinder/search/*` to your own AiZynthFinder implementation.
 - You can switch between algorithm versions by renaming folders:
-  - Rename folders to either `mcts` or `retrostar` depending on which algorithm you want to use. For example, rename `mcts_distance` or `mcts_expansion_clustering` to `mcts` to use our distance-based/clustering-based MCTS implementation.
-- Install AiZynthFinder in development mode as described in the [official repository](https://github.com/MolecularAI/aizynthfinder).
+  - Rename folders to either `mcts` or `retrostar` depending on which algorithm you want to use in `aizynthfinder/aizynthfinder/search/`. For example, rename `mcts_distance` or `mcts_expansion_clustering` to `mcts` to use our distance-based/clustering-based MCTS implementation.
 
-### 2. Models Matter Framework
+### Steps:
 
-- Clone & install the Models Matter framework in the same conda environment as AiZynthFinder.
-- This is necessary to use the Dual Value Networks / Retro* template-based model.
-- Install the Retro* benchmark support: `pip install git+https://github.com/AustinT/syntheseus-retro-star-benchmark`
-- Copy all files from `code/models_matter/*` to your Models Matter installation at `modelsmatter_modelzoo/ssbenchmark/ssmodels/*`.
-  - Note: These custom model implementations will be merged into the main Models Matter repository after publication.
+1.  Download the `data` folder from Figshare and place the content directly under your `/data/` directory. A content description is available under 'figshare.md'
+    - **Caution:** Make sure the structure is `/data/*`, not `/data/data/*`.
+2.  Download the retro_star model used in dual value networks into the following path: `/data/models/dual_value_networks/template_based/model/origin.txt`.
+3.  Adjust the AiZynthFinder configuration files (e.g., `example_experiment/dual_value_networks_azf_config_retrostar.yml`) to include the correct full paths to your data folder.
+4.  You have to activate the conda environment (`conda activate sprs`) and export the external models plugin path for AiZynthFinder before running an experiment e.g., `export PYTHONPATH=/Users/alankaihassen/development/diversity_search_rebuttal/updated_code/SPRS/aizynthfinder/plugins/`
+4.  You can now run inference with the command (or use example_experiments):
+    ```bash
+    aizynthcli --config dual_value_networks_azf_config_retrostar.yml --stocks emolecules --policy retrostar_mlp --smiles smiles.txt
+    ```
 
-### 3. Dual Value Networks (Optional)
-
+## 2. Dual Value Networks (Optional)
 - For evaluation with Dual Value Networks, refer to their repository: [https://github.com/DiXue98/PDVN](https://github.com/DiXue98/PDVN).
 - We provide a newly trained self-play model in our data package.
 

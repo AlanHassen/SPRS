@@ -1,0 +1,37 @@
+expansion:
+  retrostar_mlp: # the retrostar mlp
+    type: expansion_strategies.ModelZooExpansionStrategy
+    use_gpu: False
+    module_path:
+    params:
+      model_checkpoint: /Users/alankaihassen/development/diversity_search_rebuttal/updated_code/SPRS/data/models/dual_value_networks/template_based/model/25376728/pretrained-reaction-model.ckpt
+      template_file: /Users/alankaihassen/development/diversity_search_rebuttal/updated_code/SPRS/data/models/dual_value_networks/template_based/model/25376728/template_rules_1.dat
+      expansion_topk: 50
+    cutoff_cumulative: 100
+    cutoff_number: 50
+    use_remote_models: False
+    rescale_prior: False
+search:
+  algorithm: aizynthfinder.search.retrostar.search_tree.SearchTree #mcts #aizynthfinder.search.retrostar.search_tree.SearchTree
+  max_transforms: 30 # dual value networks training mcts phase: 15. They go indefinite deep in retro *
+  iteration_limit: 500 # dual value networks uses 500
+  return_first: True
+  time_limit: 28800
+  exclude_target_from_stock: True
+  algorithm_config:
+    use_prior: True
+    prune_cycles_in_search: True
+    immediate_instantiation: [retrostar_mlp]
+post_processing: # settings from models matter
+  min_routes: 3
+  max_routes: 25
+  all_routes: False  ### orginally FALSE --> but we want them all
+  route_distance_model: None
+  route_scorer: state score
+stock:
+  emolecules:
+    type: inchiset
+    path: /Users/alankaihassen/development/diversity_search_rebuttal/updated_code/SPRS/data/stocks/full_building_blocks/dual_value_networks_emolecules_stock.hdf5
+  emolecules_no_best_first:
+    type: inchiset
+    path: /Users/alankaihassen/development/diversity_search_rebuttal/updated_code/SPRS/data/stocks/removed_building_blocks/emolecules_without_retrostar_building_blocks_azf_format.hdf5
