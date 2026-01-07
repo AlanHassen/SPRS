@@ -1,0 +1,111 @@
+{
+    "type": "mol",
+    "hide": false,
+    "smiles": "CS(=O)(=O)Oc1ccccc1O/C=C/c1cc(O)cc(C(=O)NCO)c1",
+    "is_chemical": true,
+    "in_stock": false,
+    "children": [
+        {
+            "type": "reaction",
+            "hide": false,
+            "smiles": "CS(=O)(=O)Oc1ccccc1O/C=C/c1cc(O)cc(C(=O)NCO)c1>>CS(=O)(=O)Cl.O=C(NCO)c1cc(O)cc(/C=C/Oc2ccccc2O)c1",
+            "is_reaction": true,
+            "metadata": {
+                "reaction": "CS(=O)(=O)Cl.O=C(NCO)c1cc(O)cc(/C=C/Oc2ccccc2O)c1",
+                "policy_probability": 0.528,
+                "policy_probability_rank": 0,
+                "policy_name": "retrostar_mlp",
+                "mapped_reaction_smiles": "[CH3:1][S:2](=[O:3])(=[O:4])[O:5][c:6]1[cH:7][cH:8][cH:9][cH:10][c:11]1[O:12]/[CH:13]=[CH:14]/[c:15]1[cH:16][c:17]([OH:18])[cH:19][c:20]([C:21](=[O:22])[NH:23][CH2:24][OH:25])[cH:26]1>>[CH3:27][S:28](=[O:29])(=[O:30])[Cl:31].[O:32]=[C:33]([NH:34][CH2:35][OH:36])[c:37]1[cH:38][c:39]([OH:40])[cH:41][c:42](/[CH:43]=[CH:44]/[O:45][c:46]2[cH:47][cH:48][cH:49][cH:50][c:51]2[OH:52])[cH:53]1"
+            },
+            "children": [
+                {
+                    "type": "mol",
+                    "hide": false,
+                    "smiles": "CS(=O)(=O)Cl",
+                    "is_chemical": true,
+                    "in_stock": true
+                },
+                {
+                    "type": "mol",
+                    "hide": false,
+                    "smiles": "O=C(NCO)c1cc(O)cc(/C=C/Oc2ccccc2O)c1",
+                    "is_chemical": true,
+                    "in_stock": false,
+                    "children": [
+                        {
+                            "type": "reaction",
+                            "hide": false,
+                            "smiles": "O=C(NCO)c1cc(O)cc(/C=C/Oc2ccccc2O)c1>>C=O.NC(=O)c1cc(O)cc(/C=C/Oc2ccccc2O)c1",
+                            "is_reaction": true,
+                            "metadata": {
+                                "reaction": "C=O.NC(=O)c1cc(O)cc(/C=C/Oc2ccccc2O)c1",
+                                "policy_probability": 0.0093,
+                                "policy_probability_rank": 8,
+                                "policy_name": "retrostar_mlp",
+                                "mapped_reaction_smiles": "[O:32]=[C:33]([NH:34][CH2:35][OH:36])[c:37]1[cH:38][c:39]([OH:40])[cH:41][c:42](/[CH:43]=[CH:44]/[O:45][c:46]2[cH:47][cH:48][cH:49][cH:50][c:51]2[OH:52])[cH:53]1>>[CH2:1]=[O:2].[NH2:3][C:4](=[O:5])[c:6]1[cH:7][c:8]([OH:9])[cH:10][c:11](/[CH:12]=[CH:13]/[O:14][c:15]2[cH:16][cH:17][cH:18][cH:19][c:20]2[OH:21])[cH:22]1"
+                            },
+                            "children": [
+                                {
+                                    "type": "mol",
+                                    "hide": false,
+                                    "smiles": "C=O",
+                                    "is_chemical": true,
+                                    "in_stock": true
+                                },
+                                {
+                                    "type": "mol",
+                                    "hide": false,
+                                    "smiles": "NC(=O)c1cc(O)cc(/C=C/Oc2ccccc2O)c1",
+                                    "is_chemical": true,
+                                    "in_stock": false,
+                                    "children": [
+                                        {
+                                            "type": "reaction",
+                                            "hide": false,
+                                            "smiles": "NC(=O)c1cc(O)cc(/C=C/Oc2ccccc2O)c1>>C=COc1ccccc1O.NC(=O)c1cc(O)cc(Br)c1",
+                                            "is_reaction": true,
+                                            "metadata": {
+                                                "reaction": "C=COc1ccccc1O.NC(=O)c1cc(O)cc(Br)c1",
+                                                "policy_probability": 0.001,
+                                                "policy_probability_rank": 41,
+                                                "policy_name": "retrostar_mlp",
+                                                "mapped_reaction_smiles": "[NH2:3][C:4](=[O:5])[c:6]1[cH:7][c:8]([OH:9])[cH:10][c:11](/[CH:12]=[CH:13]/[O:14][c:15]2[cH:16][cH:17][cH:18][cH:19][c:20]2[OH:21])[cH:22]1>>[CH2:1]=[CH:2][O:23][c:24]1[cH:25][cH:26][cH:27][cH:28][c:29]1[OH:30].[NH2:31][C:32](=[O:33])[c:34]1[cH:35][c:36]([OH:37])[cH:38][c:39]([Br:40])[cH:41]1"
+                                            },
+                                            "children": [
+                                                {
+                                                    "type": "mol",
+                                                    "hide": false,
+                                                    "smiles": "C=COc1ccccc1O",
+                                                    "is_chemical": true,
+                                                    "in_stock": true
+                                                },
+                                                {
+                                                    "type": "mol",
+                                                    "hide": false,
+                                                    "smiles": "NC(=O)c1cc(O)cc(Br)c1",
+                                                    "is_chemical": true,
+                                                    "in_stock": true
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "scores": {
+        "state score": 0.9865529289315002,
+        "number of reactions": 3,
+        "number of pre-cursors": 4,
+        "number of pre-cursors in stock": 4,
+        "average template occurrence": 0.0
+    },
+    "metadata": {
+        "created_at_iteration": 120,
+        "is_solved": true
+    }
+}

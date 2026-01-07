@@ -1,0 +1,21 @@
+\begin{table}[h]
+\centering
+\caption{Detailed Synthesis Route Search Results per Molecule}
+\label{tab:summary_results_detailed}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}clcccccc}
+\toprule
+\makecell[c]{Molecule \\ ID} & \textbf{Algorithm} & \makecell[c]{Is \\ Solved} & \makecell[c]{Num \\ Steps} & \makecell[c]{Hash Dedup. \\ Routes} & \makecell[c]{BB Dedup. \\ Routes} & \makecell[c]{Min BBs \\ in Route} & \makecell[c]{Total \\ Unique BBs} \\
+\midrule
+0 & MCTS & True & 3.0 & 1976 & 1181 & 4.0 & 180 \\
+0 & Distance-MCTS & True & 3.0 & 2737 & 1301 & 4.0 & 231 \\
+0 & Cluster-MCTS & True & 4.0 & 659 & 466 & 4.0 & 115 \\
+0 & Retro*-0 & True & 4.0 & 836 & 758 & 4.0 & 121 \\
+0 & Cluster-Retro*-0 & True & 6.0 & 1042 & 620 & 5.0 & 215 \\
+1 & MCTS & True & 4.0 & 2 & 2 & 5.0 & 12 \\
+1 & Distance-MCTS & True & 4.0 & 16 & 14 & 4.0 & 19 \\
+1 & Cluster-MCTS & True & 6.0 & 3 & 3 & 5.0 & 11 \\
+1 & Retro*-0 & True & 5.0 & 11 & 11 & 5.0 & 19 \\
+1 & Cluster-Retro*-0 & False &  & 0 & 0 &  & 0 \\
+\bottomrule
+\end{tabular*}
+\end{table}
