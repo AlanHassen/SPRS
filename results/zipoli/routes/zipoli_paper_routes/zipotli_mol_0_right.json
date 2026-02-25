@@ -1,0 +1,149 @@
+{
+  "type": "mol",
+  "hide": false,
+  "smiles": "CS(=O)(=O)OC1=C(C=CC=C1)O/C=C/C2=CC(=CC(=C2)C(=O)NCO)O",
+  "is_chemical": true,
+  "in_stock": false,
+  "children": [
+    {
+      "type": "reaction",
+      "hide": false,
+      "smiles": "COC(=O)C1=CC(=CC(=C1)O)/C=C/OC2=C(C=CC=C2)OS(=O)(=O)C.C(N)O>>CS(=O)(=O)OC1=C(C=CC=C1)O/C=C/C2=CC(=CC(=C2)C(=O)NCO)O",
+      "is_reaction": true,
+      "metadata": {
+        "reaction_id": "r1",
+        "policy_name": "user_defined"
+      },
+      "children": [
+        {
+          "type": "mol",
+          "hide": false,
+          "smiles": "C(N)O",
+          "is_chemical": true,
+          "in_stock": true
+        },
+        {
+          "type": "mol",
+          "hide": false,
+          "smiles": "COC(=O)C1=CC(=CC(=C1)O)/C=C/OC2=C(C=CC=C2)OS(=O)(=O)C",
+          "is_chemical": true,
+          "in_stock": false,
+          "children": [
+            {
+              "type": "reaction",
+              "hide": false,
+              "smiles": "CC(=O)OC1=CC(=CC(=C1)/C=C/OC2=C(C=CC=C2)OS(=O)(=O)C)C(=O)OC>>COC(=O)C1=CC(=CC(=C1)O)/C=C/OC2=C(C=CC=C2)OS(=O)(=O)C",
+              "is_reaction": true,
+              "metadata": {
+                "reaction_id": "r2",
+                "policy_name": "user_defined"
+              },
+              "children": [
+                {
+                  "type": "mol",
+                  "hide": false,
+                  "smiles": "CC(=O)OC1=CC(=CC(=C1)/C=C/OC2=C(C=CC=C2)OS(=O)(=O)C)C(=O)OC",
+                  "is_chemical": true,
+                  "in_stock": false,
+                  "children": [
+                    {
+                      "type": "reaction",
+                      "hide": false,
+                      "smiles": "CC(=O)OC1=CC(=CC(=C1)Br)C(=O)OC.C=COC1=C(C=CC=C1)OS(=O)(=O)C>>CC(=O)OC1=CC(=CC(=C1)/C=C/OC2=C(C=CC=C2)OS(=O)(=O)C)C(=O)OC",
+                      "is_reaction": true,
+                      "metadata": {
+                        "reaction_id": "r3",
+                        "policy_name": "user_defined"
+                      },
+                      "children": [
+                        {
+                          "type": "mol",
+                          "hide": false,
+                          "smiles": "C=COC1=C(C=CC=C1)OS(=O)(=O)C",
+                          "is_chemical": true,
+                          "in_stock": false,
+                          "children": [
+                            {
+                              "type": "reaction",
+                              "hide": false,
+                              "smiles": "C=COC1=C(C=CC=C1)O.CS(=O)(=O)Cl>>C=COC1=C(C=CC=C1)OS(=O)(=O)C",
+                              "is_reaction": true,
+                              "metadata": {
+                                "reaction_id": "r4",
+                                "policy_name": "user_defined"
+                              },
+                              "children": [
+                                {
+                                  "type": "mol",
+                                  "hide": false,
+                                  "smiles": "C=COC1=C(C=CC=C1)O",
+                                  "is_chemical": true,
+                                  "in_stock": true
+                                },
+                                {
+                                  "type": "mol",
+                                  "hide": false,
+                                  "smiles": "CS(=O)(=O)Cl",
+                                  "is_chemical": true,
+                                  "in_stock": true
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "mol",
+                          "hide": false,
+                          "smiles": "CC(=O)OC1=CC(=CC(=C1)Br)C(=O)OC",
+                          "is_chemical": true,
+                          "in_stock": false,
+                          "children": [
+                            {
+                              "type": "reaction",
+                              "hide": false,
+                              "smiles": "COC(=O)C1=CC(=CC(=C1)O)Br.CC(=O)OC(=O)C>>CC(=O)OC1=CC(=CC(=C1)Br)C(=O)OC",
+                              "is_reaction": true,
+                              "metadata": {
+                                "reaction_id": "r5",
+                                "policy_name": "user_defined"
+                              },
+                              "children": [
+                                {
+                                  "type": "mol",
+                                  "hide": false,
+                                  "smiles": "COC(=O)C1=CC(=CC(=C1)O)Br",
+                                  "is_chemical": true,
+                                  "in_stock": true
+                                },
+                                {
+                                  "type": "mol",
+                                  "hide": false,
+                                  "smiles": "CC(=O)OC(=O)C",
+                                  "is_chemical": true,
+                                  "in_stock": true
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "scores": {
+    "state score": 1.0,
+    "number of reactions": 5,
+    "number of pre-cursors": 5,
+    "number of pre-cursors in stock": 5
+  },
+  "metadata": {
+    "is_solved": true
+  }
+}
